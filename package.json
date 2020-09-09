@@ -10,5 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChaimSh/NodeProject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChaimSh/NodeProject/issues"
+  },
+  "homepage": "https://github.com/ChaimSh/NodeProject#readme"
 }

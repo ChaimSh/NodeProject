@@ -1,41 +1,17 @@
-// var localTutor=require('./NodeTutorial');
-// localTutor.NodeTutorial();
-// localTutor.NodeTutorial.pTutor();
+const express = require('express');
 
-// const fs = require('fs');
+const app = express();
 
 
-// const userName = 'Chaim';
-
-// fs.writeFile('user-data.txt', 'Name: '+ userName, (err) => {
-//     if (err) {
-//         console.log(err)
-//         return;
-//     }
-//     console.log('Wrote File')
-// })
-
-const http = require('http');
-
-const server = http.createServer((req, res) => {
-  console.log('incoming requests')
-  console.log(req.method, req.url)
-
-  if (req.method === "POST") {
-    let body = ''
-    req.on('end', () => {
-        console.log(body)
-        res.end('got the post request')
-    })
-    
-    req.on('data', (chunk)=> {
-       body += chuck;
-     } )
-  } else {
-    
-  res.setHeader('Content-Type', 'text/html');
-  res.end('<form method="POST><input type="text" name="username"><button type="submit">New User</button></form>')
-  }
+app.use((req, res, next) => {
+   console.log('MIddleware')
+   next();
 });
 
-server.listen(5000);
+//call next if you dont wanna call this middle
+app.use((req, res, next) => {
+    res.send('<form method="POST"><input type="text" name="username"><button type="submit">Create User</button></form>')
+});
+
+app.listen(5000);
+
