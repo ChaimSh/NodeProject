@@ -11,7 +11,7 @@ app.post('/user', (req, res, next) => {
 })
 //call next if you dont wanna call this middle
 app.get('/', (req, res, next) => {
-    res.send('<form action="user" method="POST"><input type="text" name="username"><button type="submit">Create User</button></form>')
+    res.send('<form action="/user" method="POST"><input type="text" name="username"><button type="submit">Create User</button></form>')
 });
     
     
